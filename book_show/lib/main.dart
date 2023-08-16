@@ -1,3 +1,4 @@
+import 'package:book_show/modules/home/infra/datasource/movie_list_data.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -70,6 +71,10 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+
+    MovieDataSource dataSource = MovieDataSource();
+    dataSource.getNowShowingMovieList();
+
     // This method is rerun every time setState is called, for instance as done
     // by the _incrementCounter method above.
     //
