@@ -1,4 +1,4 @@
-import 'package:book_show/modules/home/infra/datasource/movie_list_data.dart';
+import 'package:book_show/modules/home/infra/datasource/movie_datasource.dart';
 import 'package:flutter/material.dart';
 import 'package:book_show/modules/home/infra/models/movie.dart';
 
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Home Page'),
     );
   }
 }
@@ -33,14 +33,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
   Future<List<Movie>>? movie;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
 
   @override
   void initState() {
@@ -75,11 +68,6 @@ class _MyHomePageState extends State<MyHomePage> {
                 })
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
