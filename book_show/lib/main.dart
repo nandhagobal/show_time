@@ -1,4 +1,7 @@
+import 'package:book_show/modules/home/domain/movie_repository.dart';
+import 'package:book_show/modules/home/domain/usecase/movie_usecase.dart';
 import 'package:book_show/modules/home/infra/datasource/movie_datasource.dart';
+import 'package:book_show/modules/home/repository/movie_repository_impl.dart';
 import 'package:flutter/material.dart';
 import 'package:book_show/modules/home/infra/models/movie.dart';
 
@@ -38,8 +41,11 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
     MovieDataSource dataSource = MovieDataSource();
+    MovieRepository movieRepository = MovieRepositoryImpl(dataSource);
+    MovieUseCase movieUseCase = MovieUseCase(movieRepository);
+
     setState(() {
-      movie = dataSource.getNowShowingMovieList();
+      movie = movieUseCase.fetchNowPlayingMovie();
     });
     super.initState();
   }
