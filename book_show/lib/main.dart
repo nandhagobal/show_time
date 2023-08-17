@@ -2,8 +2,8 @@ import 'package:book_show/modules/home/domain/movie_repository.dart';
 import 'package:book_show/modules/home/domain/usecase/movie_usecase.dart';
 import 'package:book_show/modules/home/infra/datasource/movie_datasource.dart';
 import 'package:book_show/modules/home/repository/movie_repository_impl.dart';
+import 'package:book_show/modules/home/ui/movie_bloc.dart';
 import 'package:flutter/material.dart';
-import 'package:book_show/modules/home/infra/models/movie.dart';
 
 void main() {
   runApp(const MyApp());
@@ -36,17 +36,15 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  Future<List<Movie>>? movie;
+  MovieBloc? bloc;
 
   @override
   void initState() {
     MovieDataSource dataSource = MovieDataSource();
     MovieRepository movieRepository = MovieRepositoryImpl(dataSource);
     MovieUseCase movieUseCase = MovieUseCase(movieRepository);
-
-    setState(() {
-      movie = movieUseCase.fetchNowPlayingMovie();
-    });
+    bloc = MovieBloc(movieUseCase);
+    bloc?.fetchNowPlayingMovie();
     super.initState();
   }
 
@@ -61,8 +59,8 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            FutureBuilder(
-                future: movie,
+            StreamBuilder(
+                stream: bloc?.nowPlayingMovies,
                 builder: (context, snapshot) {
                   if (snapshot.hasData) {
                     return Text("Total movies: ${snapshot.data?.length}");

@@ -2,10 +2,10 @@ import 'package:book_show/modules/home/domain/movie_repository.dart';
 import 'package:book_show/modules/home/infra/models/movie.dart';
 
 class MovieUseCase{
-  MovieRepository movieRepository;
+  final MovieRepository _movieRepository;
 
-  MovieUseCase(this.movieRepository);
+  MovieUseCase(this._movieRepository);
 
-  Future<List<Movie>> fetchNowPlayingMovie() => movieRepository.fetchNowPlayingMovie();
+  Future<List<Movie>> fetchNowPlayingMovie() => _movieRepository.fetchNowPlayingMovie();
 
 }
