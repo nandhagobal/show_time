@@ -20,6 +20,8 @@ class Movie {
   @JsonKey(name: 'release_date')
   String releaseDate = "";
   String title = "";
+  @JsonKey(name: "vote_average", defaultValue: 0.0)
+  double averageRating;
 
   Movie(
       this.id,
@@ -30,7 +32,8 @@ class Movie {
       this.popularity,
       this.posterPath,
       this.releaseDate,
-      this.title);
+      this.title,
+      this.averageRating);
 
   factory Movie.fromJson(Map<String, dynamic> json) => _$MovieFromJson(json);
 
