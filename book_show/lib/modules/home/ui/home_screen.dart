@@ -1,8 +1,8 @@
 import 'package:book_show/core/config/di.dart';
-import 'package:book_show/modules/home/infra/models/movie.dart';
 import 'package:book_show/modules/home/ui/movie_bloc.dart';
-import 'package:book_show/modules/home/ui/movie_tile.dart';
 import 'package:flutter/material.dart';
+
+import '../../../common_widgets/movie_horizontal_list.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -42,7 +42,7 @@ class HomeScreenState extends State<HomeScreen> {
                 style: Theme.of(context).textTheme.displayLarge),
           ),
           Padding(
-            padding: const EdgeInsets.only(top: 20.0),
+            padding: const EdgeInsets.only(top: 20.0, bottom: 30),
             child: Container(
               decoration: const BoxDecoration(
                   color: Colors.black12,
@@ -57,37 +57,8 @@ class HomeScreenState extends State<HomeScreen> {
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.only(top: 30, bottom: 15),
-            child: Text(
-              "Now Playing",
-              style: Theme.of(context).textTheme.displayMedium,
-            ),
-          ),
-          StreamBuilder(
-              stream: _bloc.nowPlayingMovies,
-              builder: (context, snapshot) {
-                if (snapshot.hasData) {
-                  return SizedBox(
-                    height: 400,
-                    width: double.infinity,
-                    child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      itemCount: snapshot.data?.length,
-                      itemBuilder: (BuildContext context, int index) {
-                        Movie? movie = snapshot.data?[index];
-                        if (movie != null) {
-                          return MovieTile(movie);
-                        } else {
-                          return const Placeholder();
-                        }
-                      },
-                    ),
-                  );
-                } else {
-                  return const Placeholder();
-                }
-              })
+          movieHorizontalList(context, "Now Playing", _bloc.nowPlayingMovies),
+          movieHorizontalList(context, "Popular Movies", _bloc.nowPlayingMovies)
         ],
       ),
     );
