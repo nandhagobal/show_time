@@ -6,7 +6,7 @@
     <application
         android:label="book_show"
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@drawable/movie_icon">
 
         <activity
             android:name=".MainActivity"
