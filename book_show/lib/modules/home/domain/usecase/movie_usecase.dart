@@ -1,6 +1,7 @@
 import 'package:book_show/modules/home/domain/movie_repository.dart';
-import 'package:book_show/modules/home/infra/models/movie.dart';
 import 'package:injectable/injectable.dart';
+
+import '../models/movie.dart';
 
 @Injectable()
 class MovieUseCase{

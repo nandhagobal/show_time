@@ -1,7 +1,7 @@
 import 'package:injectable/injectable.dart';
 import 'package:rxdart/rxdart.dart';
+import '../domain/models/movie.dart';
 import '../domain/usecase/movie_usecase.dart';
-import '../infra/models/movie.dart';
 
 @Singleton()
 class MovieBloc {

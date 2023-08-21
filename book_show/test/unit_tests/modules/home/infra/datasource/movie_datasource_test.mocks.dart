@@ -6,7 +6,7 @@
 import 'dart:async' as _i2;
 
 import 'package:book_show/core/network/base_api.dart' as _i3;
-import 'package:book_show/modules/home/infra/models/movie.dart' as _i6;
+import 'package:book_show/modules/home/domain/models/movie.dart' as _i6;
 import 'package:http/http.dart' as _i4;
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:mockito/src/dummies.dart' as _i5;

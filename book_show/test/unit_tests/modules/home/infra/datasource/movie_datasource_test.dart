@@ -1,6 +1,6 @@
 import 'package:book_show/core/network/base_api.dart';
+import 'package:book_show/modules/home/domain/models/movie.dart';
 import 'package:book_show/modules/home/infra/datasource/movie_datasource.dart';
-import 'package:book_show/modules/home/infra/models/movie.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';

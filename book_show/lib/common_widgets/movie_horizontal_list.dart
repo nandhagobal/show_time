@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../modules/home/infra/models/movie.dart';
+import '../modules/home/domain/models/movie.dart';
 import '../modules/home/ui/movie_tile.dart';
 
 Widget movieHorizontalList(

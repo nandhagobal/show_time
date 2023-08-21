@@ -2,8 +2,9 @@ import 'dart:convert';
 
 import 'package:book_show/core/network/base_api.dart';
 import 'package:http/http.dart' as http;
-import 'package:book_show/modules/home/infra/models/movie.dart';
 import 'package:injectable/injectable.dart';
+
+import '../../domain/models/movie.dart';
 
 @Injectable()
 class MovieDataSource {

@@ -1,7 +1,8 @@
 import 'package:book_show/core/config/app_config.dart';
 import 'package:flutter/material.dart';
 
-import '../infra/models/movie.dart';
+import '../domain/models/movie.dart';
+
 
 class MovieTile extends StatelessWidget {
   final Movie _movie;
