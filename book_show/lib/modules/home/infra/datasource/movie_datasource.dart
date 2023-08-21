@@ -7,19 +7,19 @@ import 'package:injectable/injectable.dart';
 
 @Injectable()
 class MovieDataSource {
-  BaseApi baseApi;
+  BaseApi _baseApi;
 
-  MovieDataSource(this.baseApi);
+  MovieDataSource(this._baseApi);
 
   Future<List<Movie>> getNowShowingMovieList() async {
-    return baseApi.get<List<Movie>>("/movie/now_playing?language=en-US&page=1",
+    return _baseApi.get<List<Movie>>("/movie/now_playing?language=en-US&page=1",
         (http.Response response) {
       var data = jsonDecode(response.body);
       var results = data["results"] as List;
       List<Movie> movies = [];
-      results.forEach((element) {
+      for (var element in results) {
         movies.add(Movie.fromJson(element));
-      });
+      }
       return movies;
     });
   }
