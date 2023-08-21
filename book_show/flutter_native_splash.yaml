@@ -34,7 +34,7 @@ flutter_native_splash:
   # parameters from above. If the image_dark parameter is specified, color_dark or
   # background_image_dark must be specified.  color_dark and background_image_dark cannot both be
   # set.
-  color_dark: "#042a49"
+  # color_dark: "#042a49"
   #background_image_dark: "assets/dark-background.png"
   #image_dark: assets/splash-invert.png
   #branding_dark: assets/dart_dark.png
@@ -50,10 +50,10 @@ flutter_native_splash:
   # 640 pixels in diameter.
   # App icon without an icon background: This should be 1152×1152 pixels, and fit within a circle
   # 768 pixels in diameter.
-    image: assets/images/movie_launcher_logo.png
+  # image: assets/images/movie_launcher_logo.png
 
   # Splash screen background color.
-    color: "#42a5f5"
+  # color: "#42a5f5"
 
   # App icon background color.
   #icon_background_color: "#111111"
