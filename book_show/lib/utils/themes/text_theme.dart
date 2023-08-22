@@ -10,9 +10,8 @@ class AppThemeText {
   static TextStyle get _labelMedium =>
       const TextStyle(fontSize: 18, color: Colors.grey);
 
-  static TextStyle get _labelSmall => const TextStyle(
-        fontSize: 12,
-      );
+  static TextStyle get _labelSmall =>
+      const TextStyle(fontSize: 14, color: Colors.grey);
 
   static TextStyle get labelMediumUnderline => TextStyle(
       fontFamily: GoogleFonts.roboto().fontFamily,
