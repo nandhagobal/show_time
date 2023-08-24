@@ -1,4 +1,3 @@
-import 'dart:ffi';
 
 import 'package:book_show/core/config/app_config.dart';
 import 'package:book_show/modules/home/domain/models/movie.dart';
@@ -91,7 +90,6 @@ class MovieDetailsScreen extends StatelessWidget {
               ),
             ),
             Container(
-              width: 600,
               height: 60,
               decoration: const BoxDecoration(
                   color: Colors.black,
