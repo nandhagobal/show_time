@@ -1,3 +1,4 @@
+import 'package:book_show/common_widgets/bottom_navigation.dart';
 import 'package:book_show/core/config/di.dart';
 import 'package:book_show/routes/app_router.dart';
 import 'package:book_show/utils/themes/app_theme.dart';
@@ -23,3 +24,17 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+class MainScreen extends StatelessWidget {
+  final Widget screen;
+  const MainScreen(this.screen,{super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: screen,
+      bottomNavigationBar: const CustomizedNavBar(),
+    );
+  }
+}
+

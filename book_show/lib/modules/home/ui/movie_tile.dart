@@ -2,7 +2,6 @@ import 'package:book_show/core/config/app_config.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../routes/route_constants.dart';
 import '../domain/models/movie.dart';
 
 
