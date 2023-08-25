@@ -23,29 +23,29 @@ class AppRouter {
           GoRoute(
               path: "/",
               name: AppRouteConstants.homeScreen,
-              pageBuilder: (context, state) {
-                return const MaterialPage(child: HomeScreen());
+              builder: (context, state) {
+                return const HomeScreen();
               }),
           GoRoute(
               path: "/discover",
               name: AppRouteConstants.discoverScreen,
-              pageBuilder: (context, state) {
-                return const MaterialPage(child: ComingSoon("discover"));
+              builder: (context, state) {
+                return const ComingSoon("discover");
               }),
           GoRoute(
               path: "/profile",
               name: AppRouteConstants.profileScreen,
-              pageBuilder: (context, state) {
-                return const MaterialPage(child: ComingSoon("profile"));
+              builder: (context, state) {
+                return const ComingSoon("profile");
               }),
         ]),
         GoRoute(
             path: "/details",
             parentNavigatorKey: _rootNavigatorKey,
             name: AppRouteConstants.movieDetailsScreen,
-            pageBuilder: (context, GoRouterState state) {
+            builder: (context, GoRouterState state) {
               Movie movie = state.extra as Movie;
-              return MaterialPage(child: MovieDetailsScreen(movie));
+              return MovieDetailsScreen(movie);
             })
   ]);
 }
