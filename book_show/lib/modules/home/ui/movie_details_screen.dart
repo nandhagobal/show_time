@@ -79,12 +79,10 @@ class MovieDetailsScreen extends StatelessWidget {
                     child: Text("Overview",
                         style: Theme.of(context).textTheme.displaySmall),
                   ),
-                  Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.only(top: 20.0, bottom: 20.0),
-                      child: Text(_movie.overview,
-                          style: Theme.of(context).textTheme.labelSmall),
-                    ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 20.0, bottom: 20.0),
+                    child: Text(_movie.overview,
+                        style: Theme.of(context).textTheme.labelSmall),
                   ),
                 ],
               ),
