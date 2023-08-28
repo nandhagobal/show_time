@@ -14,7 +14,6 @@ class _CustomizedNavBarState extends State<CustomizedNavBar> {
 
   @override
   void initState() {
-    print("state is newly created");
     super.initState();
   }
 
