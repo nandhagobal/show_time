@@ -4,6 +4,8 @@ import 'package:book_show/modules/home/domain/models/movie.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../../common_widgets/app_bar.dart';
+
 class MovieDetailsScreen extends StatelessWidget {
   final Movie _movie;
 
@@ -12,20 +14,7 @@ class MovieDetailsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-          onPressed: () {
-            context.pop();
-          },
-          icon: const Icon(
-            Icons.arrow_back_ios_new,
-            color: Colors.black,
-          ),
-        ),
-        title:
-            Text(_movie.title, style: Theme.of(context).textTheme.labelMedium),
-        titleSpacing: 0.0,
-      ),
+      appBar: appBar(_movie.title, context),
       body: Padding(
         padding: const EdgeInsets.only(left: 30.0, right: 30.0, bottom: 20.0),
         child: Column(
@@ -87,12 +76,15 @@ class MovieDetailsScreen extends StatelessWidget {
                 ],
               ),
             ),
-            Container(
-              height: 60,
-              decoration: const BoxDecoration(
-                  color: Colors.black,
-                  borderRadius: BorderRadius.all(Radius.circular(8))),
-              child: Center(child: Text("Book Show", style: Theme.of(context).textTheme.displayMedium?.copyWith(color: Colors.white),)),
+            GestureDetector(
+              onTap: (){ context.push("/seat-selection"); },
+              child: Container(
+                height: 60,
+                decoration: const BoxDecoration(
+                    color: Colors.black,
+                    borderRadius: BorderRadius.all(Radius.circular(8))),
+                child: Center(child: Text("Book Show", style: Theme.of(context).textTheme.displayMedium?.copyWith(color: Colors.white),)),
+              ),
             )
           ],
         ),

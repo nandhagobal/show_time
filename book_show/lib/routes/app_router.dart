@@ -9,6 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../modules/home/domain/models/movie.dart';
+import '../modules/home/ui/seat_selection_screen.dart';
 
 final GlobalKey<NavigatorState> _rootNavigatorKey = GlobalKey<NavigatorState>();
 
@@ -49,6 +50,13 @@ class AppRouter {
             builder: (context, GoRouterState state) {
               Movie movie = state.extra as Movie;
               return MovieDetailsScreen(movie);
+            }),
+        GoRoute(
+            path: "/seat-selection",
+            parentNavigatorKey: _rootNavigatorKey,
+            name: AppRouteConstants.seatSelectionScreen,
+            builder: (context, GoRouterState state) {
+              return const SeatSelectionScreen();
             })
       ]);
 }
