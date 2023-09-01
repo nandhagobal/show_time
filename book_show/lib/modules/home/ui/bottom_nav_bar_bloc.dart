@@ -20,16 +20,12 @@ class BottomNavBarBloc{
   int getIndex() => _index;
 
   void notifyPop(String? name) {
-    print(name);
     var indexedItem = items.indexed;
     var iterator = indexedItem.iterator;
     while (iterator.moveNext()) {
-      print("${iterator.current.$1}");
-      print(iterator.current.$2.name);
       if (iterator.current.$2.name == name) {
         _index = iterator.current.$1;
       }
     }
-    print(_index);
   }
 }

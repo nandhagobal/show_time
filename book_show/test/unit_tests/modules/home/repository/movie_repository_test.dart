@@ -15,10 +15,10 @@ void main() {
     Movie mockMovie = MockMovie();
     when(mockMovie.title).thenReturn("MovieTitle");
     List<Movie> mockMovies = [mockMovie];
-    MovieDataSource _movieDataSource = MockMovieDataSource();
-    when(_movieDataSource.getNowShowingMovieList())
+    MovieDataSource movieDataSource = MockMovieDataSource();
+    when(movieDataSource.getNowShowingMovieList())
         .thenAnswer((realInvocation) => Future.value(mockMovies));
-    MovieRepository repository = MovieRepositoryImpl(_movieDataSource);
+    MovieRepository repository = MovieRepositoryImpl(movieDataSource);
     var result = await repository.fetchNowPlayingMovie();
     expect(result, isInstanceOf<List<Movie>>());
     expect(result[0], mockMovie);

@@ -8,7 +8,7 @@ import '../../domain/models/movie.dart';
 
 @Injectable()
 class MovieDataSource {
-  BaseApi _baseApi;
+  final BaseApi _baseApi;
 
   MovieDataSource(this._baseApi);
 

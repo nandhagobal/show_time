@@ -25,7 +25,6 @@ class _CustomizedNavBarState extends State<CustomizedNavBar> {
 
   @override
   Widget build(BuildContext context) {
-    print("bottom nav bar rendered $selectedTabIndex");
     return BottomNavigationBar(
             onTap: (int selectedIndex) {
               changeSelectedTabIndex(selectedIndex);
