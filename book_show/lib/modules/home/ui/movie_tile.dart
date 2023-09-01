@@ -4,7 +4,6 @@ import 'package:go_router/go_router.dart';
 
 import '../domain/models/movie.dart';
 
-
 class MovieTile extends StatelessWidget {
   final Movie _movie;
 
@@ -13,8 +12,8 @@ class MovieTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: (){
-        context.push("/details",extra: _movie);
+      onTap: () {
+        context.push("/details", extra: _movie);
       },
       child: SizedBox(
         width: 150,
@@ -24,7 +23,8 @@ class MovieTile extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                constraints: const BoxConstraints(minHeight: 180, minWidth: 150),
+                constraints:
+                    const BoxConstraints(minHeight: 180, minWidth: 150),
                 decoration: BoxDecoration(
                     border: Border.all(color: Colors.black12, width: 1)),
                 child: Padding(

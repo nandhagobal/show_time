@@ -7,4 +7,3 @@ final getIt = GetIt.instance;
 
 @InjectableInit()
 void configureDependencies() => getIt.init();
-

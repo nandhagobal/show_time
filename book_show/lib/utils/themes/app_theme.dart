@@ -9,8 +9,7 @@ class AppTheme {
         primaryColor: AppColor.primaryColor,
         scaffoldBackgroundColor: AppColor.primaryColor,
         fontFamily: GoogleFonts.roboto().fontFamily,
-        appBarTheme: const AppBarTheme(
-            color: Colors.white, elevation: 0.0),
+        appBarTheme: const AppBarTheme(color: Colors.white, elevation: 0.0),
         textTheme: AppThemeText.getTextTheme());
   }
 }

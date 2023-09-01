@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-AppBar appBar(String title,BuildContext context) {
+AppBar appBar(String title, BuildContext context) {
   return AppBar(
     leading: IconButton(
       onPressed: () {
@@ -12,8 +12,7 @@ AppBar appBar(String title,BuildContext context) {
         color: Colors.black,
       ),
     ),
-    title:
-    Text(title, style: Theme.of(context).textTheme.labelMedium),
+    title: Text(title, style: Theme.of(context).textTheme.labelMedium),
     titleSpacing: 0.0,
   );
 }

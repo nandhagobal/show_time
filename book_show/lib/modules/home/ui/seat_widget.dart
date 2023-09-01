@@ -2,11 +2,9 @@ import 'package:flutter/material.dart';
 
 class Seat extends StatefulWidget {
   final String id;
-  const Seat(this.id,{super.key});
+  const Seat(this.id, {super.key});
 
-  void add() {
-
-  }
+  void add() {}
 
   @override
   State<Seat> createState() => _SeatState(id);
@@ -19,7 +17,7 @@ class _SeatState extends State<Seat> {
 
   _SeatState(this.id);
 
-  toggleSeatStatus(){
+  toggleSeatStatus() {
     setState(() {
       isSelected = !isSelected;
     });
@@ -28,10 +26,17 @@ class _SeatState extends State<Seat> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () { toggleSeatStatus(); },
+      onTap: () {
+        toggleSeatStatus();
+      },
       child: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Icon(Icons.event_seat_rounded, color: !isBlocked ?  isSelected ? Colors.orange.shade900 : Colors.grey : Colors.black54 ),
+        child: Icon(Icons.event_seat_rounded,
+            color: !isBlocked
+                ? isSelected
+                    ? Colors.orange.shade900
+                    : Colors.grey
+                : Colors.black54),
       ),
     );
   }

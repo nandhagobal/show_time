@@ -29,21 +29,21 @@ class MyApp extends StatelessWidget {
 class MainScreen extends StatelessWidget {
   final Widget screen;
   final BottomNavBarBloc bottomNavBarBloc = getIt.get<BottomNavBarBloc>();
-  MainScreen(this.screen,{super.key});
+  MainScreen(this.screen, {super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: screen,
-      bottomNavigationBar: BottomNavigationBar(
-        onTap: (int selectedIndex) {
-          bottomNavBarBloc.changeIndex(selectedIndex);
-          context.push(bottomNavBarBloc.items[selectedIndex].path);
-        },
-        currentIndex: bottomNavBarBloc.getIndex(),
-        items: bottomNavBarBloc.items.map((e) => BottomNavigationBarItem(icon: e.icon,label: e.label)).toList()
-      )
-    );
+        body: screen,
+        bottomNavigationBar: BottomNavigationBar(
+            onTap: (int selectedIndex) {
+              bottomNavBarBloc.changeIndex(selectedIndex);
+              context.push(bottomNavBarBloc.items[selectedIndex].path);
+            },
+            currentIndex: bottomNavBarBloc.getIndex(),
+            items: bottomNavBarBloc.items
+                .map((e) =>
+                    BottomNavigationBarItem(icon: e.icon, label: e.label))
+                .toList()));
   }
 }
-

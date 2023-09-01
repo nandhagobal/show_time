@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 
-class BottomNavBarItem{
+class BottomNavBarItem {
   final Widget icon;
   final String path;
   final String label;

@@ -1,4 +1,3 @@
-
 import 'package:book_show/core/config/app_config.dart';
 import 'package:book_show/modules/home/domain/models/movie.dart';
 import 'package:flutter/material.dart';
@@ -77,13 +76,22 @@ class MovieDetailsScreen extends StatelessWidget {
               ),
             ),
             GestureDetector(
-              onTap: (){ context.push("/seat-selection"); },
+              onTap: () {
+                context.push("/seat-selection");
+              },
               child: Container(
                 height: 60,
                 decoration: const BoxDecoration(
                     color: Colors.black,
                     borderRadius: BorderRadius.all(Radius.circular(8))),
-                child: Center(child: Text("Book Show", style: Theme.of(context).textTheme.displayMedium?.copyWith(color: Colors.white),)),
+                child: Center(
+                    child: Text(
+                  "Book Show",
+                  style: Theme.of(context)
+                      .textTheme
+                      .displayMedium
+                      ?.copyWith(color: Colors.white),
+                )),
               ),
             )
           ],

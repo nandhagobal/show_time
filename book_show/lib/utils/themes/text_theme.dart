@@ -10,8 +10,7 @@ class AppThemeText {
   static TextStyle get _labelMedium =>
       const TextStyle(fontSize: 18, color: Colors.grey);
 
-  static TextStyle get _labelSmall =>
-      const TextStyle(
+  static TextStyle get _labelSmall => const TextStyle(
       fontSize: 14,
       color: Colors.grey,
       fontWeight: FontWeight.w100,

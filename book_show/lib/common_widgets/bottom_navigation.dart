@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-
 class CustomizedNavBar extends StatefulWidget {
   const CustomizedNavBar({super.key});
 
@@ -17,7 +16,7 @@ class _CustomizedNavBarState extends State<CustomizedNavBar> {
     super.initState();
   }
 
-  void changeSelectedTabIndex(int index){
+  void changeSelectedTabIndex(int index) {
     setState(() {
       selectedTabIndex = index;
     });
@@ -26,22 +25,23 @@ class _CustomizedNavBarState extends State<CustomizedNavBar> {
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
-            onTap: (int selectedIndex) {
-              changeSelectedTabIndex(selectedIndex);
-              switch(selectedIndex) {
-                case 0 : context.push("/");
-                case 1 : context.push("/discover");
-                case 2 : context.push("/profile");
-              }
-            },
-            currentIndex: selectedTabIndex,
-            items: const [
-              BottomNavigationBarItem(icon: Icon(Icons.home), label: "home"),
-              BottomNavigationBarItem(
-                  icon: Icon(Icons.search), label: "discover"),
-              BottomNavigationBarItem(
-                  icon: Icon(Icons.person), label: "profile"),
-            ],
-          );
+      onTap: (int selectedIndex) {
+        changeSelectedTabIndex(selectedIndex);
+        switch (selectedIndex) {
+          case 0:
+            context.push("/");
+          case 1:
+            context.push("/discover");
+          case 2:
+            context.push("/profile");
+        }
+      },
+      currentIndex: selectedTabIndex,
+      items: const [
+        BottomNavigationBarItem(icon: Icon(Icons.home), label: "home"),
+        BottomNavigationBarItem(icon: Icon(Icons.search), label: "discover"),
+        BottomNavigationBarItem(icon: Icon(Icons.person), label: "profile"),
+      ],
+    );
   }
 }

@@ -4,11 +4,11 @@ import 'package:injectable/injectable.dart';
 import '../models/movie.dart';
 
 @Injectable()
-class MovieUseCase{
+class MovieUseCase {
   final MovieRepository _movieRepository;
   @FactoryMethod()
   MovieUseCase(this._movieRepository);
 
-  Future<List<Movie>> fetchNowPlayingMovie() => _movieRepository.fetchNowPlayingMovie();
-
+  Future<List<Movie>> fetchNowPlayingMovie() =>
+      _movieRepository.fetchNowPlayingMovie();
 }

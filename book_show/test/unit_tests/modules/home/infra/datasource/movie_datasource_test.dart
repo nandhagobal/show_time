@@ -7,7 +7,6 @@ import 'package:mockito/mockito.dart';
 
 import 'movie_datasource_test.mocks.dart';
 
-
 @GenerateMocks([BaseApi, Movie])
 void main() {
   test("getNowShowingMovieList", () async {
@@ -16,7 +15,8 @@ void main() {
     when(mockMovie.title).thenReturn("MovieTitle");
     List<Movie> mockMovies = [mockMovie];
     var dataSource = MovieDataSource(baseApi);
-    when(baseApi.get<List<Movie>>(any, any)).thenAnswer((_) => Future.value(mockMovies));
+    when(baseApi.get<List<Movie>>(any, any))
+        .thenAnswer((_) => Future.value(mockMovies));
     var result = await dataSource.getNowShowingMovieList();
     expect(result, isInstanceOf<List<Movie>>());
     expect(result[0], mockMovie);

@@ -6,6 +6,5 @@ import 'package:mockito/annotations.dart';
 void main() {
   test("Test api call", () {
     //MockClient client = MockClient();
-
   });
 }

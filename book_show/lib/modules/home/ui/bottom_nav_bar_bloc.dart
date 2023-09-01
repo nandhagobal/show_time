@@ -4,17 +4,20 @@ import 'package:flutter/material.dart';
 import 'package:injectable/injectable.dart';
 
 @Singleton()
-class BottomNavBarBloc{
+class BottomNavBarBloc {
   List<BottomNavBarItem> get items => [
-    BottomNavBarItem(const Icon(Icons.home), "/home", "Home", AppRouteConstants.homeScreen),
-    BottomNavBarItem(const Icon(Icons.search), "/discover", "Discover", AppRouteConstants.discoverScreen),
-    BottomNavBarItem(const Icon(Icons.person), "/profile", "Profile", AppRouteConstants.profileScreen)
-  ];
+        BottomNavBarItem(const Icon(Icons.home), "/home", "Home",
+            AppRouteConstants.homeScreen),
+        BottomNavBarItem(const Icon(Icons.search), "/discover", "Discover",
+            AppRouteConstants.discoverScreen),
+        BottomNavBarItem(const Icon(Icons.person), "/profile", "Profile",
+            AppRouteConstants.profileScreen)
+      ];
 
   int _index = 0;
 
-  void changeIndex(int index){
-   _index = index;
+  void changeIndex(int index) {
+    _index = index;
   }
 
   int getIndex() => _index;

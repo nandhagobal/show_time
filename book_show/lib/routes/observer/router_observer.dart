@@ -4,10 +4,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:injectable/injectable.dart';
 
 @Injectable()
-class GoRouterObserver extends NavigatorObserver{
+class GoRouterObserver extends NavigatorObserver {
   final BottomNavBarBloc bottomNavBarBloc = getIt.get<BottomNavBarBloc>();
   @override
   void didPop(Route<dynamic> route, Route<dynamic>? previousRoute) {
-      bottomNavBarBloc.notifyPop(previousRoute?.settings.name);
+    bottomNavBarBloc.notifyPop(previousRoute?.settings.name);
   }
 }

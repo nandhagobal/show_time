@@ -40,8 +40,8 @@ Widget movieHorizontalList(
                 height: 200,
                 child: Center(
                     child: CircularProgressIndicator(
-                      color: Colors.redAccent,
-                    )),
+                  color: Colors.redAccent,
+                )),
               );
             }
           })
