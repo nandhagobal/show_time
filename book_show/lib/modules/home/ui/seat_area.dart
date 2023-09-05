@@ -34,57 +34,70 @@ class SeatArea extends StatelessWidget {
       width: double.infinity,
       decoration: const BoxDecoration(color: Colors.black12),
       padding: const EdgeInsets.all(30.0),
-      child: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            ...generateSeats(),
-            Padding(
-              padding: const EdgeInsets.only(top: 30.0, bottom: 20.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    children: [
-                      const Icon(
-                        Icons.event_seat_rounded,
-                        color: Colors.grey,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 6.0),
-                        child: Text("Available",
-                            style: TextStyle(color: Colors.grey.shade500)),
-                      )
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      Icon(Icons.event_seat_rounded,
-                          color: Colors.orange.shade900),
-                      Padding(
-                          padding: const EdgeInsets.only(left: 6.0),
-                          child: Text("Selected",
-                              style: TextStyle(color: Colors.grey.shade500)))
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      const Icon(
-                        Icons.event_seat_rounded,
-                        color: Colors.black54,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 6.0),
-                        child: Text("Reserved",
-                            style: TextStyle(color: Colors.grey.shade500)),
-                      )
-                    ],
-                  ),
-                ],
+      child: Column(
+        children: [
+          Center(
+            child: Container(
+              constraints: const BoxConstraints(
+                maxHeight: 350,
               ),
-            )
-          ],
-        ),
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      ...generateSeats(),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 30.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Row(
+                  children: [
+                    const Icon(
+                      Icons.event_seat_rounded,
+                      color: Colors.grey,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 6.0),
+                      child: Text("Available",
+                          style: TextStyle(color: Colors.grey.shade500)),
+                    )
+                  ],
+                ),
+                Row(
+                  children: [
+                    Icon(Icons.event_seat_rounded,
+                        color: Colors.orange.shade900),
+                    Padding(
+                        padding: const EdgeInsets.only(left: 6.0),
+                        child: Text("Selected",
+                            style: TextStyle(color: Colors.grey.shade500)))
+                  ],
+                ),
+                Row(
+                  children: [
+                    const Icon(
+                      Icons.event_seat_rounded,
+                      color: Colors.black54,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 6.0),
+                      child: Text("Reserved",
+                          style: TextStyle(color: Colors.grey.shade500)),
+                    )
+                  ],
+                ),
+              ],
+            ),
+          )
+        ],
       ),
     );
   }

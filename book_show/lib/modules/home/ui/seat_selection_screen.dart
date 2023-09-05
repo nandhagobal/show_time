@@ -11,7 +11,7 @@ class SeatSelectionScreen extends StatelessWidget {
         appBar: appBar("Seat Selection", context),
         body: Center(
             child: Column(
-          children: [SeatArea(7, 6)],
+          children: [SeatArea(10, 10)],
         )));
   }
 }
