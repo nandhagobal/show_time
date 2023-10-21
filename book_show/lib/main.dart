@@ -3,9 +3,11 @@ import 'package:book_show/modules/home/ui/bottom_nav_bar_bloc.dart';
 import 'package:book_show/routes/app_router.dart';
 import 'package:book_show/utils/themes/app_theme.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:go_router/go_router.dart';
 
-void main() {
+void main() async {
+  await dotenv.load();
   configureDependencies();
   runApp(const MyApp());
 }
