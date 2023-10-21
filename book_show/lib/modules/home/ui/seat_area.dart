@@ -33,7 +33,7 @@ class SeatArea extends StatelessWidget {
     return Container(
       width: double.infinity,
       decoration: const BoxDecoration(color: Colors.black12),
-      padding: const EdgeInsets.all(30.0),
+      padding: const EdgeInsets.all(15.0),
       child: Column(
         children: [
           Center(
