@@ -21,6 +21,5 @@ jobs:
       - name: Install dependencies
       - run: dart pub get
         working-directory: book_show
-      - name: Test
       - run: flutter test
         working-directory: book_show
