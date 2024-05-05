@@ -22,6 +22,7 @@ jobs:
         run: cd book_show
       - run: ls
       - run: dart pub get
+        working-directory: book_show
       # - name: Install dependencies
       # - run: dart pub get
       # - name: Test
