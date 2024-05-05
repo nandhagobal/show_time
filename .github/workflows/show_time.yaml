@@ -2,9 +2,9 @@ name: Show Time App
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "workflow" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "workflow" ]
 jobs:
   build:
     runs-on: ubuntu-latest
