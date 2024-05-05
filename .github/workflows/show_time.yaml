@@ -12,13 +12,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - run:  cd book_show
-      # - name: Set up Flutter
-      #   uses: subosito/flutter-action@v2
-      #   with:
-      #     channel: stable
-      #     flutter-version-file: pubspec.yaml # path to pubspec.yaml
-      # - run: flutter --version
-      # - name: Install dependencies
-      # - run: dart pub get
-      # - name: Test
-      # - run: flutter test
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          flutter-version-file: pubspec.yaml # path to pubspec.yaml
+      - run: flutter --version
+      - name: Install dependencies
+      - run: dart pub get
+      - name: Test
+      - run: flutter test
