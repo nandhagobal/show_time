@@ -19,6 +19,7 @@ jobs:
           flutter-version: 3.19.0
       - run: flutter --version
       - name: Install dependencies
-        run: dart pub get
+        run: cd book_show
+      - run: dart pub get
       # - name: Test
       # - run: flutter test
