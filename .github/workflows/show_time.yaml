@@ -1,0 +1,22 @@
+name: Show Time App
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+steps:
+  - name: Checkout
+    uses: actions/checkout@v4
+  - name: Set up Flutter
+    uses: subosito/flutter-action@v2
+    with:
+      channel: stable
+      flutter-version-file: pubspec.yaml # path to pubspec.yaml
+  - run: flutter --version
+  - run: cd /book_show
+  - name: Install dependencies
+  - run: dart pub get
+  - name: Test
+  - run: flutter test
