@@ -41,3 +41,8 @@ jobs:
         run: | 
             cd book_show/build/app/outputs/apk/release
             ls
+      - name: upload artifact
+        uses: actions/upload-artifact@v4
+        with: 
+          name: Release build
+          path: book_show/build/app/outputs/apk/release/app-release.apk
