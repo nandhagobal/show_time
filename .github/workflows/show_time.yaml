@@ -25,6 +25,12 @@ jobs:
         working-directory: book_show
       # - name: Install dependencies
       # - run: dart pub get
+      - name: Create Env File
+        run: | 
+            cd book_show
+            touch .env
+            echo API_KEY = ${{ secrets.API_KEY }} >> .env
+            cat .env
       - name: Test
         run: flutter test
         working-directory: book_show
