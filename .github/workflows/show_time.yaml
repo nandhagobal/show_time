@@ -11,6 +11,16 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: release
+        uses: actions/create-release@v1
+        id: create_release
+        with:
+          draft: false
+          prerelease: false
+          release_name: ${{ steps.version.outputs.version }}
+          tag_name: ${{ github.ref }}
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
       - run:  cd book_show
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
@@ -46,12 +56,12 @@ jobs:
         with: 
           name: Release build
           path: book_show/build/app/outputs/apk/release/app-release.apk
-          
-      - name: Release with Notes
-        uses: softprops/action-gh-release@v1
-        if: startsWith(github.ref, 'refs/tags/')
-        with:
-          files: |
-            book_show/build/app/outputs/apk/release/app-release.apk
+
+      - name: upload apk
+        uses: actions/upload-release-asset@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ github.token }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: book_show/build/app/outputs/apk/release/app-release.apk
+          asset_name: release {{github.ref}} app
