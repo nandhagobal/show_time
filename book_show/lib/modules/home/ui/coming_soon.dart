@@ -9,7 +9,7 @@ class ComingSoon extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Center(
-      child: Text("$name \n coming soon"),
+      child: Text("$name  \n coming soon"),
     ));
   }
 }
